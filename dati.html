@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>姆斯塔分院帽</title>
+<style>
+body {
+  background-image: url('image/dt_background.jpg');
+  /* 高斯模糊的背景图片 */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.container {
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* 背景颜色 */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* 阴影 */
+  max-width: 600px;
+}
+h1, h2 {
+  text-align: center;
+}
+.question {
+  margin-bottom: 20px;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.option {
+  margin-bottom: 10px;
+}
+.btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.result {
+  margin-top: 50px;
+  text-align: center;
+}
+.result h2 {
+  margin-bottom: 20px;
+}
+.result p {
+  font-size: 20px;
+}
+.result .score {
+  font-size: 30px;
+  font-weight: bold;
+  color: #007bff;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>姆斯塔分院帽</h1>
+  <div class="question">
+    <h2>1. 本问卷部分内容涉及姆斯塔世界观相关内容，因此在回答问卷前，请确认您是否已经阅读《姆斯塔世界观前瞻》。（选否不会影响其他问题的回答，请如实作答。）</h2>
+    <div class="options">
+      <label class="option"><input type="radio" name="q1" value="1">是，我已经阅读过《姆斯塔世界观前瞻》</label>
+      <label class="option"><input type="radio" name="q1" value="0">否，我并没有阅读过《姆斯塔世界观前瞻》</label>
+    </div>
+  </div>
+  <button class="btn" onclick="nextQuestion()">下一个</button>
+  <div class="question" style="display: none;">
+    <h2>2. 今天是你在虚拟世界上班的第一天，你决定：</h2>
+    <div class="options">
+      <label class="option"><input type="radio" name="q2" value="1">准时上班！给老板留下一个好印象！</label>
+      <label class="option"><input type="radio" name="q2" value="0">选择了一份可以居家办公的工作，所以可以把通勤时间拿去睡觉～</label>
+      <label class="option"><input type="radio" name="q2" value="0">诶？今天要上班吗？！</label>
+    </div>
+  </div>
+  <button class="btn" onclick="nextQuestion()" style="display: none;">下一题</button>
+  <div class="question" style="display: none;">
+    <h2>3. 在路边看到了一只虚弱的小奶猫！你决定：</h2>
+    <div class="options">
+      <label class="option"><input type="radio" name="q3" value="1">直接路过，小奶猫只会影响我工作的速度！</label>
+      <label class="option"><input type="radio" name="q3" value="0">好可怜的猫猫，把它抱回家收养吧。</label>
+      <label class="option"><input type="radio" name="q3" value="0">根本就没有看见小猫，哪里有小猫？</label>
+    </div>
+  </div>
+  <button class="btn" onclick="nextQuestion()" style="display: none;">下一题</button>
+  <div class="question" style="display: none;">
+
+    <h2>4. 你认为下列哪项是发展科技的首要目的？</h2>
+    <div class="options">
+        <label class="option"><input type="radio" name="q4" value="1">为生活提供便利</label>
+        <label class="option"><input type="radio" name="q4" value="0">将更多事物转变为可用数值衡量的“财富”</label>
+        <label class="option"><input type="radio" name="q4" value="0">“化不可能为可能”</label>
+    </div>
+</div>
+<button class="btn" onclick="nextQuestion()" style="display: none;">下一题</button>
+<div class="question" style="display: none;">
+
+<h2>5. 为了达成“某项目的”，下列更重要的是：</h2>
+    <div class="options">
+        <label class="option"><input type="radio" name="q5" value="1">清晰的逻辑、详细的计划、即时地执行</label>
+        <label class="option"><input type="radio" name="q5" value="0">确保过程中所做的一切都合法合规</label>
+        <label class="option"><input type="radio" name="q5" value="0">一些虚无缥缈的存在，比如幻想、运气，或者仅仅是等待</label>
+    </div>
+</div>
+<button class="btn" onclick="nextQuestion()" style="display: none;">下一题</button>
+<div class="question" style="display: none;">
+
+<h2>6. 一个许久没有联系过的朋友突然找到你，称自己犯了一些小错误，求你暂时收留他一阵。你：</h2>
+    <div class="options">
+        <label class="option"><input type="radio" name="q6" value="1">“你应该为你犯的错误付出代价。”</label>
+        <label class="option"><input type="radio" name="q6" value="0">“收留你能给我带来什么好处？”</label>
+        <label class="option"><input type="radio" name="q6" value="0">“哦天呐，快进来！”</label>
+    </div>
+</div>
+<button class="btn" onclick="nextQuestion()" style="display: none;">下一题</button>
+<div class="question" style="display: none;">
+
+<h2>7. 下班后你会做些什么？</h2>
+    <div class="options">
+        <label class="option"><input type="radio" name="q7" value="1">什么是下班？为什么要下班？</label>
+        <label class="option"><input type="radio" name="q7" value="0">宅在家里休息</label>
+        <label class="option"><input type="radio" name="q7" value="0">外出散步，享受生活</label>
+    </div>
+</div>
+<button class="btn" onclick="nextQuestion()" style="display: none;">下一题</button>
+<div class="question" style="display: none;">
+
+<h2>8. 你更愿意在以下哪个风格的城市居住？ </h2>
+    <div class="options">
+        <label class="option"><input type="radio" name="q8" value="1">简洁、整齐</label>
+        <label class="option"><input type="radio" name="q8" value="0">繁复、梦幻</label>
+        <label class="option"><input type="radio" name="q8" value="0">随意、散漫</label>
+    </div>
+</div>
+<button class="btn" onclick="nextQuestion()" style="display: none;">下一题</button>
+<div class="question" style="display: none;">
+
+<h2>9. 请在理性与感性中做出选择：</h2>
+    <div class="options">
+        <label class="option"><input type="radio" name="q9" value="1">理性</label>
+        <label class="option"><input type="radio" name="q9" value="0">感性</label>
+        <label class="option"><input type="radio" name="q9" value="0">“这不由我决定。”</label>
+    </div>
+</div>
+<button class="btn" onclick="nextQuestion()" style="display: none;">下一题</button>
+<div class="question" style="display: none;">
+    <h2>10. 你认为“自由”是：</h2>
+    <div class="options">
+      <label class="option"><input type="radio" name="q10" value="1">褒义词</label>
+      <label class="option"><input type="radio" name="q10" value="0">贬义词</label>
+      <label class="option"><input type="radio" name="q10" value="0">中性词</label>
+    </div>
+  </div>
+  <button class="btn" onclick="submit()" style="display: none;">提交</button>
+  <div class="result" style="display: none;">
+      <h2>您属于：</h2>
+      <p class="result-text"></p>
+  </div>
+</div>
+<script>
+  const questions = document.querySelectorAll('.question');
+  const btns = document.querySelectorAll('.btn');
+  let index = 0;
+  let A = 0;
+  let B = 0;
+  let C = 0;
+  let D = 0;
+  let E = 0;
+
+  function nextQuestion() {
+    let selectedOption = document.querySelector('input[name="q' + (index + 1) + '"]:checked');
+    if (selectedOption) {
+        switch (selectedOption.value) {
+            case '1':
+                switch (index + 1) {
+                    case 1:
+                        A += 1; B += 1; C += 1; D += 1;
+                        break;
+                    case 2:
+                        A += 1; B += 1; C += 1;
+                        break;
+                    case 3:
+                        A += 1; C += 1;
+                        break;
+                    case 4:
+                        A += 1; C += 1; E += 1;
+                        break;
+                    case 5:
+                        A += 2;
+                        break;
+                    case 6:
+                        C += 2;
+                        break;
+                    case 7:
+                        A += 2;
+                        break;
+                    case 8:
+                        A += 1; C += 1; E += 1;
+                        break;
+                    case 9:
+                        A += 2;
+                        break;
+                    case 10:
+                        A += 1; E += 1;
+                        break;
+                }
+                break;
+            case '0':
+                switch (index + 1) {
+                    case 1:
+                        E += 2;
+                        break;
+                    case 2:
+                        D += 2;
+                        break;
+                    case 3:
+                        B += 1; D += 1;
+                        break;
+                    case 4:
+                        B += 2;
+                        break;
+                    case 5:
+                        B += 1; D += 1; E += 1;
+                        break;
+                    case 6:
+                        B += 1; E += 1;
+                        break;
+                    case 7:
+                        B += 1; E += 1;
+                        break;
+                    case 8:
+                        D += 1;
+                        break;
+                    case 9:
+                        B += 2;
+                        break;
+                    case 10:
+                        B += 2;
+                        break;
+                }
+                break;
+        }
+
+        questions[index].style.display = 'none';
+        index++;
+        if (index < questions.length) {
+            questions[index].style.display = 'block';
+            btns.forEach(btn => btn.style.display = 'none');
+            btns[index].style.display = 'block';
+        } else {
+            showResult();
+        }
+    } else {
+        alert('请先选择一个选项！');
+    }
+}
+
+
+    function showResult() {
+    const result = document.querySelector('.result');
+    result.style.display = 'block';
+
+    // 获取各个选项的分数
+    let scores = { A, B, C, D, E };
+
+    // 计算最高分
+    let maxScore = Math.max(A, B, C, D, E);
+
+    // 找出所有达到最高分的选项
+    let maxScoreVariables = Object.keys(scores).filter(key => scores[key] === maxScore);
+
+    // 准备显示的文本
+    let resultText = '';
+
+    // 实现不同maxScore值的逻辑
+    if (maxScore < 6) {
+        resultText = '赫里尤伽—Hygge Welcome to Hygge！这里有着最便捷的生活，每个人都能享受到最全面的照顾。赫里尤伽将为你解决生活中的一切烦恼，你所要做的只有一件事，那就是放空你的大脑，彻底地放松自己！'; // 例如的消息
+    } else {
+        switch (maxScoreVariables[0]) {
+                    case 'A':
+                        resultText = '奈斯丽帕—Nefelibata Welcome to Nefelibata！这里有着最发达的科技 每个人都在抓紧时间提升自己。奈斯丽帕将为你扫清前进路上的一切障碍，你所要做的只有一件事，那就是抓紧每分每秒，用最高的效率，在最短的时间里创造最高的收益！';
+                        break;
+                    case 'B':
+                        resultText = '科莫雷比—Komorebi Welcome to Komorebi！这里有着最迷人的风景，每个人都可以在这里找到他们所追求的美好。科莫雷比将为你提供舒适宜人的居住环境，你所要做的只有一件事，那就是享受生活，坚持对美学的追求与对生活的热爱！';
+                        break;
+                    case 'C':
+                        resultText = '斯以弥斯—Themis Welcome to Themis！这里有着最健全的规章制度，每个人都能够在这里体会到真正的平等。斯以弥斯将为你守护你所拥有的每一分权力，你所要做的只有一件事，那就是确保自己的言行举止都合法合规，维护这座城市的平等与和谐！';
+                        break;
+                    case 'D':
+                        resultText = '麦柯索沃—Maxwell Welcome to Maxwell！这里有最公正的制度，每个人的命运都将由他们自己掌握。麦柯索沃将为你献上最丰富的可选项，你所要做的只有一件事，那就是用你的智慧与一点点的运气，去成为最大的人生赢家！';
+                        break;
+                    case 'E':
+                        resultText = '赫里尤伽—Hygge Welcome to Hygge！这里有着最便捷的生活，每个人都能享受到最全面的照顾。赫里尤伽将为你解决生活中的一切烦恼，你所要做的只有一件事，那就是放空你的大脑，彻底地放松自己！';
+                        break;
+                        default:
+                resultText = 'unknow';
+        }
+    }
+
+    // 更新结果显示
+    result.querySelector('.result-text').textContent = resultText;
+}
+
+    function submit() {
+        showResult();
+    }
+</script>
+</body>
+</html>
