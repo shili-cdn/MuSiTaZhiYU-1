@@ -1,66 +1,84 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-<title>姆斯塔分院帽</title>
-<style>
-body {
-  background-image: url('image/dt_background.jpg');
-  /* 高斯模糊的背景图片 */
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-}
-.container {
-  margin: 50px auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  /* 背景颜色 */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  /* 阴影 */
-  max-width: 600px;
-}
-h1, h2 {
-  text-align: center;
-}
-.question {
-  margin-bottom: 20px;
-}
-.options {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-}
-.option {
-  margin-bottom: 10px;
-}
-.btn {
-  display: block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.result {
-  margin-top: 50px;
-  text-align: center;
-}
-.result h2 {
-  margin-bottom: 20px;
-}
-.result p {
-  font-size: 20px;
-}
-.result .score {
-  font-size: 30px;
-  font-weight: bold;
-  color: #007bff;
-}
-</style>
+    <title>姆斯塔分院帽</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 添加viewport设置 -->
+    <style>
+        body {
+            background-image: url('image/dt_background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0; /* 重置默认的body外边距 */
+            padding: 0; /* 重置默认的body内边距 */
+            font-family: Arial, sans-serif; /* 设置通用字体 */
+        }
+        
+        .container {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        
+        h1, h2 {
+            text-align: center;
+        }
+        
+        .question {
+            margin-bottom: 20px;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        
+        .option {
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .result {
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .result h2 {
+            margin-bottom: 20px;
+        }
+        
+        .result p {
+            font-size: 20px;
+        }
+        
+        .result .score {
+            font-size: 30px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                max-width: 100%; /* 在小屏幕上使用100%宽度 */
+                margin: 10px; /* 减少边距 */
+                padding: 10px; /* 减少内边距 */
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="container">
